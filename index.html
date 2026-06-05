@@ -4,44 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>潜水店活动报备</title>
-    <script>
-        // 自动跳转到你的固定域名
-        window.location.href = "https://hoohigh.dpdns.org/report.html";
-    </script>
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            text-align: center;
-            padding: 50px 20px;
-            background: #f5f5f5;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
         .container {
             max-width: 400px;
-            margin: 0 auto;
+            width: 100%;
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            text-align: center;
         }
-        h1 { color: #333; font-size: 20px; }
-        p { color: #666; margin: 15px 0; }
-        a {
+        .icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #1e3a5f;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        .btn {
             display: inline-block;
-            padding: 12px 30px;
+            width: 100%;
+            padding: 16px 30px;
             background: #07c160;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: #06ad56;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(7,193,96,0.3);
+        }
+        .tips {
+            margin-top: 20px;
+            padding: 12px;
+            background: #f0f9ff;
+            border-radius: 8px;
+            color: #666;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        .footer {
+            margin-top: 30px;
+            color: #999;
+            font-size: 12px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🏊‍♂️ 潜水店活动报备</h1>
-        <p>正在跳转至报备页面...</p>
-        <p>如果没有自动跳转，请点击下方按钮</p>
-        <a href="https://hoohigh.dpdns.org/report.html">进入报备表</a>
+        <div class="icon">🏊‍♂️</div>
+        <h1>浩海潜水活动报备</h1>
+        <p class="subtitle">请填写您的活动报备信息</p>
+        
+        <a href="https://hoohigh.dpdns.org/report.html" class="btn">
+            点击进入报备表
+        </a>
+        
+        <div class="tips">
+            💡 如果无法打开，请复制以下链接到浏览器访问：<br>
+            <span style="color: #2c5282; word-break: break-all;">
+                https://hoohigh.dpdns.org/report.html
+            </span>
+        </div>
+        
+        <div class="footer">
+            浩海潜水俱乐部
+        </div>
     </div>
 </body>
 </html>
