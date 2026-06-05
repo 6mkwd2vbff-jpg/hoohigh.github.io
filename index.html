@@ -24,20 +24,9 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
             text-align: center;
         }
-        .icon {
-            font-size: 64px;
-            margin-bottom: 20px;
-        }
-        h1 {
-            color: #1e3a5f;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 30px;
-        }
+        .icon { font-size: 64px; margin-bottom: 20px; }
+        h1 { color: #1e3a5f; font-size: 24px; margin-bottom: 10px; }
+        .subtitle { color: #666; font-size: 14px; margin-bottom: 30px; }
         .btn {
             display: inline-block;
             width: 100%;
@@ -50,12 +39,10 @@
             font-weight: 600;
             border: none;
             cursor: pointer;
-            transition: all 0.3s;
+            margin-bottom: 15px;
         }
-        .btn:hover {
-            background: #06ad56;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(7,193,96,0.3);
+        .btn-secondary {
+            background: #2c5282;
         }
         .tips {
             margin-top: 20px;
@@ -66,11 +53,6 @@
             font-size: 13px;
             line-height: 1.6;
         }
-        .footer {
-            margin-top: 30px;
-            color: #999;
-            font-size: 12px;
-        }
     </style>
 </head>
 <body>
@@ -79,20 +61,41 @@
         <h1>浩海潜水活动报备</h1>
         <p class="subtitle">请填写您的活动报备信息</p>
         
+        <!-- 尝试直接打开 -->
         <a href="https://hoohigh.dpdns.org/report.html" class="btn">
-            点击进入报备表
+            直接打开报备表
         </a>
         
-        <div class="tips">
-            💡 如果无法打开，请复制以下链接到浏览器访问：<br>
-            <span style="color: #2c5282; word-break: break-all;">
-                https://hoohigh.dpdns.org/report.html
-            </span>
-        </div>
+        <!-- 用系统浏览器打开 -->
+        <button class="btn btn-secondary" onclick="openInBrowser()">
+            在浏览器中打开
+        </button>
         
-        <div class="footer">
-            浩海潜水俱乐部
+        <div class="tips">
+            如果上方按钮无法打开，请点击"在浏览器中打开"<br>
+            系统会自动调用手机浏览器访问
         </div>
     </div>
+
+    <script>
+        function openInBrowser() {
+            const url = 'https://hoohigh.dpdns.org/report.html';
+            
+            // 尝试多种方式调用系统浏览器
+            // 方式1：使用 intent 协议（Android）
+            if (/Android/i.test(navigator.userAgent)) {
+                window.location.href = 'intent://hoohigh.dpdns.org/report.html#Intent;scheme=https;package=com.android.chrome;end';
+                return;
+            }
+            
+            // 方式2：使用 Google Chrome URL scheme
+            window.location.href = 'googlechrome://navigate?url=' + encodeURIComponent(url);
+            
+            // 方式3：延迟后尝试 Safari（iOS）
+            setTimeout(function() {
+                window.location.href = url;
+            }, 500);
+        }
+    </script>
 </body>
 </html>
